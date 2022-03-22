@@ -152,31 +152,31 @@
 
                 // Массив имён файлов .patt. Массив заполняется в порядке добавления маркеров
                 // если вместо .patt был добавлен баркод, на его место в массив добавляется пустая строка
-                const patternNames = ["01.png" ,"02.png" ,"03.png" ,"04.png" ,"05.png" ,"06.png"];
+                const patternNames = ["" ,"" ,""];
                 // Maссив баркодов, заполняется одновременно с массивом паттернов
                 // если вместо баркода был добавлен .patt, на его место в массив добавляется -1
-                const patternBarcode = [-1 ,-1 ,-1 ,-1 ,-1 ,-1];
+                const patternBarcode = [1 ,2 ,3];
                 // Массив типов контента для каждого маркера, заполняется значиями: изображение, модель, видео
-                const modes = ["image" ,"image" ,"image" ,"image" ,"image" ,"image"];
+                const modes = ["image" ,"image" ,"image"];
                 // Массив файлов моделей, если нет модели будет добавлена пустая строка
-                const modelFiles = ["" ,"" ,"" ,"" ,"" ,""];
+                const modelFiles = ["" ,"" ,""];
                 // Массив файлов изображений, если нет изображения будет добавлена пустая строка
-                const imageFiles = ["Маркер_1.PNG" ,"Маркер_2.PNG" ,"Маркер_3.PNG" ,"" ,"" ,""];
+                const imageFiles = ["Marker_1_IMG.PNG" ,"Marker_2_IMG.PNG" ,"Marker_3_IMG.PNG"];
                 // Массив файлов видео, если нет видео будет добавлена пустая строка
-                const videoFiles = ["" ,"" ,"" ,"" ,"" ,""];
+                const videoFiles = ["" ,"" ,""];
                 // Массив файлов аудио, если нет аудио будет добавлена пустая строка
-                const audioFiles = ["Маркер_1.m4a" ,"Маркер_2.m4a" ,"Маркер_3.m4a" ,"" ,"" ,""];
+                const audioFiles = ["Marker_1_AUDIO.m4a" ,"Marker_2_AUDIO.m4a" ,"Marker_3_AUDIO.m4a"];
                 // Массив опций повтора аудио и видео контента, по дефолту для всех будет false
-                const repeatOptions = ["false" ,"false" ,"false" ,"false" ,"false" ,"false"];
+                const repeatOptions = ["false" ,"false" ,"false"];
   
                 // Создаём массив для всех маркеров
                 const markerRoots = [];
-                for (let i = 0; i < 6; i++) {
+                for (let i = 0; i < 3; i++) {
                     markerRoots[i] = new THREE.Group();
                 }
   
                 // Проходимся по каждому маркеру из массива и добавляем его в главный контейнер 
-                for (let i = 0; i < 6; i++) {
+                for (let i = 0; i < 3; i++) {
                     mainContainer.add(markerRoots[i]);
 
                     // Если текущий маркер это баркод, создаём AR контроллер под баркод
